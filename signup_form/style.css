@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+
+    /* Outline covering the container but commenting to set as the assignment */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group.row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-group.row input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-group.row input:last-child {
+    margin-right: 0;
+}
+
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(61, 137, 218, 0.5);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkbox-group input {
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.checkbox-group p {
+    font-size: 14px;
+    margin: 0;
+    flex: 1;
+}
+
+.signup-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-form p strong {
+    font-size: 11px;
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.signup-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-btn {
+    background-color: #007bff;
+    color: #fff;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+.signin-btn {
+    background-color: #28a745;
+    color: #fff;
+    flex: 1;
+}
+
+.signin-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive and resizable to all screensizes */
+@media (max-width: 650px) {
+    .input-group.row {
+        flex-direction: column;
+    }
+
+    .input-group.row input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+    }
+
+    .checkbox-group label {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+    }
+}
