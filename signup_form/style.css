@@ -19,9 +19,9 @@ body {
     padding: 20px;
 
     /* Outline covering the container but commenting to set as the assignment */
-    background-color: #fff;
+    /* background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 10px; */
 }
 
 .signup-form {
@@ -38,6 +38,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    margin-left: 20px;
 }
 
 .input-group.row {
@@ -70,6 +71,7 @@ body {
 .checkbox-group {
     flex-direction: row;
     justify-content: space-between;
+    margin-left: 0;
 }
 
 .checkbox-group input {
@@ -94,7 +96,7 @@ body {
     text-align: center;
 }
 
-.signup-form p strong {
+.signup-form p span {
     font-size: 11px;
     background-color: #007bff;
     color: white;
@@ -116,6 +118,7 @@ body {
 .button-group {
     display: flex;
     justify-content: space-between;
+    margin-left: 20px;
 }
 
 .btn {
