@@ -244,6 +244,9 @@ const Controller = ((model, view) => {
                                 state.cart = data;
                             });
                     }
+
+                    // keep the amount as it is
+                    amountElement.innerText = amount;
                 } else {
                     alert("Cannot add item with 0 amount.!!");
                 }
@@ -272,11 +275,16 @@ const Controller = ((model, view) => {
 
     const handleCheckout = () => {
         view.checkoutBtnElement.addEventListener("click", () => {
-            model.checkout().then(() => {
-                state.cart = [];
-                view.renderCart(state.cart);
-                // Redirect to the payment page on real world application
-            });
+            model
+                .checkout()
+                .then(() => {
+                    state.cart = [];
+                    view.renderCart(state.cart);
+                })
+                .then(() => {
+                    // Redirect to the payment page on real world application
+                    alert("Redirecting to Payment Section.");
+                });
         });
     };
     const bootstrap = () => {
