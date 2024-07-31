@@ -62,6 +62,7 @@ const Model = (() => {
             this.#inventory = [];
             this.#cart = [];
         }
+
         get cart() {
             return this.#cart;
         }
@@ -108,6 +109,8 @@ const View = (() => {
     const inventoryListElement = document.querySelector(".inventory__list");
     const cartListElement = document.querySelector(".cart__list");
     const checkoutBtnElement = document.querySelector(".checkout-btn");
+    const sortAscendingBtn = document.querySelector(".btn-sort-asc");
+    const sortDescendingBtn = document.querySelector(".btn-sort-desc");
 
     const renderInventory = (inventory) => {
         let inventoryListTemp = "";
@@ -148,6 +151,8 @@ const View = (() => {
         checkoutBtnElement,
         cartListElement,
         inventoryListElement,
+        sortAscendingBtn,
+        sortDescendingBtn,
     };
 })();
 
@@ -287,12 +292,55 @@ const Controller = ((model, view) => {
                 });
         });
     };
+
+    const sortInventoryAsc = () => {
+        view.sortAscendingBtn.addEventListener("click", (event) => {
+            state.inventory.sort((a, b) => {
+                const itemA = a.content;
+                const itemB = b.content;
+
+                if (itemA < itemB) {
+                    return -1;
+                }
+                if (itemA > itemB) {
+                    return 1;
+                }
+
+                return 0;
+            });
+
+            view.renderInventory(state.inventory);
+        });
+    };
+
+    const sortInventoryDesc = () => {
+        view.sortDescendingBtn.addEventListener("click", (event) => {
+            state.inventory.sort((a, b) => {
+                const itemA = a.content;
+                const itemB = b.content;
+
+                if (itemA > itemB) {
+                    return -1;
+                }
+                if (itemA < itemB) {
+                    return 1;
+                }
+
+                return 0;
+            });
+
+            view.renderInventory(state.inventory);
+        });
+    };
+
     const bootstrap = () => {
         init();
         handleUpdateAmount();
         handleAddToCart();
         handleDelete();
         handleCheckout();
+        sortInventoryAsc();
+        sortInventoryDesc();
     };
     return {
         bootstrap,
