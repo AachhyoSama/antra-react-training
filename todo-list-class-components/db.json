@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Complete React HW1",
+      "completed": false
+    },
+    {
+      "id": "627a",
+      "title": "Finish the test",
+      "completed": false
+    },
+    {
+      "id": "a938",
+      "title": "Participate in Evaluation",
+      "completed": false
+    }
+  ]
+}
