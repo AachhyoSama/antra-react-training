@@ -12,7 +12,6 @@ const Sales = ({ data }) => {
             if (!acc[item.region]) {
                 acc[item.region] = 0;
             }
-
             acc[item.region] += item.sales;
             return acc;
         }, {});
@@ -40,20 +39,22 @@ const Sales = ({ data }) => {
                 </tr>
             </thead>
             <tbody>
-                {groupedData.flatMap(([region, items], regionIndex) => [
-                    <tr key={`sum-${regionIndex}`}>
-                        <td>{region}</td>
-                        <td>sum</td>
-                        <td>{sum[region]}</td>
-                    </tr>,
-                    ...items.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.region}</td>
-                            <td>{item.model}</td>
-                            <td>{item.sales}</td>
+                {groupedData.map(([region, items], regionIndex) => (
+                    <>
+                        <tr key={`sum-${regionIndex}`}>
+                            <td>{region}</td>
+                            <td>sum</td>
+                            <td>{sum[region]}</td>
                         </tr>
-                    )),
-                ])}
+                        {items.map((item, index) => (
+                            <tr key={index}>
+                                <td>{item.region}</td>
+                                <td>{item.model}</td>
+                                <td>{item.sales}</td>
+                            </tr>
+                        ))}
+                    </>
+                ))}
             </tbody>
         </table>
     );
