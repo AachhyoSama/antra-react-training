@@ -1,0 +1,64 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.movie-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.movie-info {
+    margin-top: 1rem;
+}
+
+.movie-info h2 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.movie-info p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+    .movie-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 651px) {
+    .movie-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
